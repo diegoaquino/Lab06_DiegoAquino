@@ -4,7 +4,7 @@ package centralGames;
  * @author DiegoAquino
  *
  */
-public class Jogo {
+public abstract class Jogo {
 	private String nome;
 	private int preco;
 	private int topScore = 0;
@@ -52,14 +52,6 @@ public class Jogo {
 		return nome;
 	}
 	
-	public int registraJogada(int score , boolean zerou){
-		if(getTopScore() < score){
-			setTopScore(score);
-		}
-		if(zerou == true){
-			setVezes_zerado((getVezes_zerado()) + 1);
-		}
-		return 0;
-	}
+	abstract boolean registraJogada(int score , boolean zerou);
 	
 }

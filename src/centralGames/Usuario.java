@@ -6,12 +6,12 @@ import java.util.ArrayList;
  * @author DiegoAquino
  *
  */
-public class Usuario {
+public abstract class Usuario {
 	private String nome;
 	private String nomeLogin;
 	ArrayList<Jogo> meusJogos;
 	private double meuDinheirinho = 0;
-	private String tipo = "noob";
+	private int x2p;
 	
 	public Usuario(String nome , String nome_login){
 		this.nome = nome;
@@ -35,22 +35,21 @@ public class Usuario {
 		return nomeLogin;
 	}
 	
-	public String getTipo(){
-		return tipo;
+	public int getX2p(){
+		return x2p;
+	}
+	public void setX2p(int x2p){
+		this.x2p = x2p;
+	}
+	public boolean registraJogada(String nomeDoJogo , int score , boolean zerou){
+	for (Jogo jogo : meusJogos) {
+		if(jogo.getNome().equals(nomeDoJogo)){
+			return jogo.registraJogada(score, zerou);
+		}
+	}
+	return false;
 	}
 	
-	public void compraJoguinho(Jogo joguinho) throws Exception{
-		if(joguinho.getPreco()>getMeuDinheirinho()){
-			throw new Exception("Fundos insuficientes.");
-		}
-		else{
-			if(getTipo().equalsIgnoreCase("noob")){
-				setMeuDinheirinho( ( getMeuDinheirinho() - ((joguinho.getPreco()*10)/100)));
-			}
-			else{
-				setMeuDinheirinho( ( getMeuDinheirinho() - ((joguinho.getPreco()*20)/100)));
-			}
-		}
-	}
+	abstract boolean compraJoguinho(Jogo joguinho) throws Exception;
 
 }
