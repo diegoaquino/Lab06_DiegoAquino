@@ -10,10 +10,17 @@ public abstract class Jogo {
 	private int topScore = 0;
 	private int vezes_jogado = 0;
 	private int vezes_zerado = 0;
+	private int pontosX2pDaJogada;
 	
 	public Jogo(String nome, int preco){
 		this.nome = nome;
 		setPreco(preco);
+	}
+	public void setPontosX2pDaJogada(int pontos){
+		pontosX2pDaJogada = pontos;
+	}
+	public int getPontosX2pDaJogada(){
+		return pontosX2pDaJogada;
 	}
 
 	public int getPreco() {

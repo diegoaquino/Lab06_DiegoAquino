@@ -1,17 +1,11 @@
 package centralGames;
 
 public class RPG extends Jogo {
-	private int pontosDaJogada;
 	public RPG(String nome, int preco) {
 		super(nome, preco);
 	}
 	
-	public void setPontosDaJogada(int pontos){
-		pontosDaJogada = pontos;
-	}
-	public int getPontosDaJogada(){
-		return pontosDaJogada;
-	}
+	
 	
 	
 	@Override
@@ -24,7 +18,8 @@ public class RPG extends Jogo {
 			setVezes_zerado(+1);
 		}
 		setVezes_jogado(+1);
-		setPontosDaJogada(10);
+		setPontosX2pDaJogada(10);
+		return true;
 	}
 
 }

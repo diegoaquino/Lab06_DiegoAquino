@@ -45,6 +45,7 @@ public abstract class Usuario {
 	for (Jogo jogo : meusJogos) {
 		if(jogo.getNome().equals(nomeDoJogo)){
 			return jogo.registraJogada(score, zerou);
+			setX2p( getX2p() + jogo.getPontosX2pDaJogada() );
 		}
 	}
 	return false;

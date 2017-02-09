@@ -8,6 +8,14 @@ public class Plataforma extends Jogo {
 
 	@Override
 	boolean registraJogada(int score, boolean zerou) {
+		if(zerou = true){
+			setVezes_zerado(+1);
+			setPontosX2pDaJogada(20);
+		}
+		if(getTopScore() < score){
+			setTopScore(score);
+		}
+		setVezes_jogado(+1);
 		return true;
 	}
 
